@@ -2,11 +2,62 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="initial-scale=1.0"/>
+    <title>CHAOZ FESTIVAL 2020</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./styles/style1.css"/>
+    <script src="./scripts/three.min.js"></script>
+    <script src="./scripts/jquery.min.js"></script>
   </head>
   <body>
-    <p>SHOULD BE THE MAIN PAGE HAHA</p>
-    <button onclick="window.location.href='./head_3d.html';">
+        <div id="video_holder">
+			       <video id="video_homepage" autoplay="autoplay" muted loop>
+			            <source src="./videos/visszaoda.mp4" type="video/mp4">
+			       </video>
+			       <script>
+				var vid = document.getElementById("video_homepage");
+					function setPlaySpeed() {
+	  			vid.playbackRate = .6;}
+					setPlaySpeed();
+			       </script>
+		    </div>
+
+        <div class="container">
+          <div>
+            <button id="beach3d" class="shrink-border" onclick="window.location.href='./stages/beach_stage/beach_3d.html';"><i>BEACH_STAGE</i></button>
+            <button id="head3d" class="shrink-border" onclick="window.location.href='./stages/head_stage/head_3d.html';">HEAD_STAGE</button>
+            <button id="beach2d" class="shrink-border" onclick="window.location.href='./stages/beach_stage/beach.html';"><i>beach_2d</i></button>
+            <button id="head2d" class="shrink-border" onclick="window.location.href='./stages/head_stage/head.html';">head_2d</button>
+          </div>
+         </div>
+
+<!--
+        <div id="button_holder" class="buttons">
+          <button class="blob-btn" onclick="window.location.href='./stages/beach_stage/beach_3d.html';"><i>
+            beach stage</i>
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+              <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+            </filter>
+          </defs>
+        </svg>
+-->
+
+    <!--<button onclick="window.location.href='./head_3d.html';">
       head 3d
     </button>
     <button onclick="window.location.href='./head.html';">
@@ -17,6 +68,6 @@
     </button>
     <button onclick="window.location.href='./beach.html';">
       beach // only video
-    </button>
+    </button>-->
   </body>
 </html>

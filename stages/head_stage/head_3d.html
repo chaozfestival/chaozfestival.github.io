@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../../scripts/aframe.min.js"></script>
+    <script src="../../scripts/jquery.min.js"></script>
+    <script src="../../scripts/aframe-video-controls.min.js"></script>
+    <script src="../../scripts/hls.min.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/shaka-player.compiled.js"></script>
+    <script src="../../scripts/shaka-loader.js"></script>
+    <link rel="stylesheet" href="../../styles/style.css">
+  </head>
+  <body>
+    <div id="video-controls">
+      <div id="video-controls_inner">
+        <input id="stream-input" hidden type="text" value="https://livestream.hitness.club/hls/123.m3u8">
+        <button id="stream-button" placeholder="enter your stream url" class="controls-btn">Livestream Load</button>
+        <button class="play controls-btn">Play</button>
+        <button class="pause controls-btn">Pause</button><code>//_HEAD_STAGE_ > > > use the arrow keys to explore reality</code>
+      </div>
+    </div>
+    <a-scene embedded>
+      <a-assets>
+        <video id="video_1" src=""></video>
+        <a-asset-item id="knife" src="./head_gltf_files/knife.gltf"></a-asset-item>
+        <a-asset-item id="meat" src="./head_gltf_files/meat.gltf"></a-asset-item>
+        <a-asset-item id="head" src="./head_gltf_files/head.gltf"></a-asset-item>
+      </a-assets>
+
+<!--camera-->
+      <a-entity camera look-controls active="true" wasd-controls="acceleration:60" position="11 0 7" ></a-entity>
+
+<a-entity rotation="0 -210 0">
+
+<!--video feed-->
+      <a-video src="#video_1" width="16" height="9" position="-11 1 20" rotation="0 180 0"></a-video>
+
+<!--lights-->
+      <a-sky color="#ECECEC"></a-sky>
+      <a-entity light="type: ambient;
+             	         intensity:.8;
+             	         color: #BBB">
+      </a-entity>
+      <a-entity light="type: directional;
+                       intensity:.1;
+             	         castShadow: true
+                       shadowCameraVisible: false;"
+             	  position="-0.5 1 1">
+      </a-entity>
+      <a-entity light="type: directional;
+                       castShadow: true;
+                       intensity: .5;
+                       shadowCameraVisible: false;"
+                position="-4 3 -1">
+      </a-entity>
+
+<!--meatlavafloor-->
+      <a-entity gltf-model="#meat"
+    	          scale=".9 .9 .9"
+    			  		position="-5 -2 0"
+    	          rotation="0 0 0">
+      </a-entity>
+
+<!--head-->
+      <a-entity gltf-model="#head"
+             	  scale="150 150 150"
+             		position="-160 -260 0"
+             	  rotation="0 0 -30">
+      <a-entity light="type: directional;
+                       castShadow: true;
+                       intensity: .8;
+                       shadowCameraVisible: false;"
+                position="1 3 1">
+      </a-entity>
+
+
+<!--knife-->
+      <a-entity gltf-model="#knife"
+                scale=".05 .05 .05"
+                position="-.11 1.9 .01"
+                rotation="10 0 20">
+        <a-entity light="type: spot;
+                         intensity: 2;
+                         castShadow: true;
+                         decay: 0.1;
+                         distance: 50;
+                         penumbra: .1;
+                         shadowCameraVisible: false;"
+                  position="4.5 .4 -1"
+                  rotation="0 90 90">
+        </a-entity>
+      </a-entity>
+      </a-entity>
+</a-entity>
+    </a-scene>
+  </body>
+</html>

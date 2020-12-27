@@ -106,13 +106,6 @@ button::after, button::before {
   height:60px;
 }
 
-#timetable{
-  margin-left: 15%;
-  margin-top: 12%;
-  width:90px;
-  height:60px;
-}
-
 .shrink-border {
   background-color: transparent;
   color: #1b1b20;
